@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>年齢確認</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <!-- カーソル -->
+  <img id="fake-cursor" src="images/cursor.gif" alt="カーソル">
+
+  <!-- 星空背景 -->
+  <div id="particles-js"></div>
+
+  <!-- セリフ＋キャラ -->
+  <div class="character-area">
+    <p class="serif" id="serif-text">「ごめんね、このサイトって18歳からなんだけど……大丈夫？」</p>
+    <img src="images/r18check.png" alt="番人たや" class="bunnin-image" id="bunnin-img">
+  </div>
+
+  <!-- ボタン -->
+  <div class="button-container" id="button-container">
+    <button id="yesBtn">うん、大丈夫！</button>
+    <button id="noBtn">まだダメです……</button>
+  </div>
+
+  <!-- 浮遊画像（演出） -->
+  <div class="floating-images">
+    <img src="images/r18check.png" class="float-img" style="left: 10%;">
+    <img src="images/r18check.png" class="float-img" style="left: 30%;">
+    <img src="images/r18check.png" class="float-img" style="left: 50%;">
+    <img src="images/r18check.png" class="float-img" style="left: 70%;">
+    <img src="images/r18check.png" class="float-img" style="left: 90%;">
+  </div>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/particles-config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/index.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      particlesJS.load('particles-js', 'js/particles-config.json');
+    });
+
+    // フェードアウト付き遷移処理
+    //yesボタンをクリックしたときの処理
+    document.getElementById("yesBtn").addEventListener("click", function () {
+  window.location.href = "main.html";
+    });
+    
+    document.getElementById("noBtn").addEventListener("click", () => {
+      const serif = document.getElementById("serif-text");
+      const bunnin = document.getElementById("bunnin-img");
+      const buttons = document.getElementById("button-container");
+
+      serif.textContent = "きみはこどもなんだね、じゃあ僕を捕まえてみて！";
+      buttons.style.display = "none";
+
+      setTimeout(() => {
+        document.body.classList.add("fadeout");
+        setTimeout(() => {
+          window.location.href = "game.html";
+        }, 1000);
+      }, 1500);
+    });
+  </script>
+</body>
+
+</html>

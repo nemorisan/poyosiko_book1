@@ -1,0 +1,14 @@
+{
+  "particles": {
+    "number": { "value": 80 },
+    "color": { "value": "#ffffff" },
+    "shape": { "type": "star" },
+    "opacity": { "value": 0.6 },
+    "size": { "value": 2 },
+    "move": { "enable": true, "speed": 0.5 }
+  },
+  "interactivity": {
+    "events": { "onhover": { "enable": true, "mode": "repulse" } }
+  },
+  "retina_detect": true
+}

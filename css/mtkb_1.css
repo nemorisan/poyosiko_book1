@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  font-family: 'Kosugi Maru', sans-serif;
+  color: white;
+  overflow-x: hidden;
+  background-color: black;
+  position: relative;
+  cursor: url("../images/cursor.png") 0 0, auto
+}
+
+/* パーティクル背景 */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* 横スクロール背景 */
+.bg-scroll {
+  position: fixed;
+  width: 300%;
+  height: 100%;
+  background: url("../images/night_sea.jpg") repeat-x;
+  background-size: cover;
+  animation: scrollBg 120s linear infinite;
+  z-index: -1;
+}
+
+
+
+@keyframes scrollBg {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-66.6%); }
+}
+
+/* 吹き出し */
+.dialogue {
+  position: relative;
+  z-index: 1;
+  padding: 2em;
+}
+
+.bubble {
+  max-width: 60%;
+  margin: 1em 0;
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.bubble.left {
+  margin-left: 0;
+  border-left: 5px solid #ff99cc;
+}
+
+.bubble.right {
+  margin-left: auto;
+  text-align: right;
+  border-right: 5px solid #9999ff;
+}
+

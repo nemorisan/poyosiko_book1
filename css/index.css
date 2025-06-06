@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "sans-serif";
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+  cursor: url("../images/cursor.gif"), auto;
+}
+
+/* カスタムカーソル（隠し画像） */
+#custom-cursor {
+  position: fixed;
+  width: 64px; /* 必要に応じて調整 */
+  height: auto;
+  pointer-events: none; /* クリック干渉なし */
+  z-index: 9999;
+  transform: translate(-50%, -50%); /* 中央合わせ */
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.character-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 15vh;
+  padding: 0 20px;
+}
+
+.serif {
+  background-color: #ffe6f0;
+  color: #222;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 12px #ffb6d5;
+  font-size: 1.2rem;
+  max-width: 400px;
+}
+
+.bunnin-image {
+  max-width: 120px;
+  height: auto;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.button-container button {
+  background: #ff78c7;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #ff9cdf;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button-container button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 16px #ffc2ef;
+}
+
+/* 浮遊たや */
+.floating-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.float-img {
+  position: absolute;
+  top: 100%;
+  animation: floatUp 20s linear infinite;
+  width: 80px;
+  opacity: 0.6;
+}
+
+@keyframes floatUp {
+  0% {
+    top: 100%;
+    transform: translateY(0);
+  }
+  100% {
+    top: -100px;
+    transform: translateY(-100%);
+  }
+}
+
+/* フェードアウト */
+.fadeout {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

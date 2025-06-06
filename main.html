@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>たやのくにから - メインページ</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    #fake-cursor {
+      position: fixed;
+      width: 32px;
+      height: 32px;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- カーソル -->
+  <img id="fake-cursor" src="images/cursor.gif" alt="カーソル">
+
+
+  <!-- パーティクル背景 -->
+  <div id="particles-js"></div>
+
+  <!-- ロゴ表示 -->
+  <header class="site-header">
+    <img src="images/site_logo.png" alt="たやのくにから" class="logo animated-logo">
+  </header>
+
+<!-- メインコンテンツ -->
+  <main class="main-content">
+    <h1>たやのくにから：R18（短編漫画オムニバス）A5/24P</h1>
+    <p>ALL STAR VG2025にて頒布予定</p>
+    <p>価格：未定</p>
+    <p>通販：未定</p>
+    <p>サークル場所：未定</p>
+    <p>ぽよシコ相談室/たやすこ</p>
+    <p>メールアドレス:tayasko0.0@gmail.com</p>
+    <p>印刷所:プリントオン様</p>
+    <p>この本の感想：https://wavebox.me/wave/5tnby3dujhynxki7/</p>
+    <p>※このページはサンプルです。実際の頒布物とは異なる場合があります。</p>
+
+  <!-- 右側メニュー -->
+  <aside class="side-menu">
+    <ul>
+      <li><a href="mtkb_1.html">3p-9p メタカビ</a></li>
+      <li><a href="mgkb_1.html">10p-16p マホカビ</a></li>
+      <li><a href="mbkb_1.html">17p-20p モブカビ</a></li>
+    </ul>
+  </aside>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    const cursor = document.getElementById('fake-cursor');
+    document.body.style.cursor = "none"; // デフォルトカーソル非表示
+
+    document.addEventListener('mousemove', function (e) {
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+    });
+  </script>
+</body>
+
+</html>

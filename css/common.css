@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  cursor: url("../images/cursor.png") 0 0, auto;
+}
+a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+  #fake-cursor {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    z-index: 9999;
+  }

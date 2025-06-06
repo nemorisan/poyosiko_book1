@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #000022;
+  overflow: hidden;
+  cursor: none;
+}
+
+#game-cursor {
+  position: fixed;
+  width: 64px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+}
+
+#taya-container img {
+  position: absolute;
+  width: 80px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#message {
+  position: fixed;
+  font-size: 1.4rem;
+  font-family: 'Kosugi Maru', sans-serif; /* Google Fontsの丸文字風 */
+  color: #333;
+  background: #ffe6f0;
+  padding: 10px 16px;
+  border-radius: 16px;
+  box-shadow: 0 0 8px #ffb6d5;
+  z-index: 999;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+
+/* 吹き出しの尾（三角） */
+#message::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px 10px 0 10px;
+  border-style: solid;
+  border-color: #ffe6f0 transparent transparent transparent;
+}
+
+
+
+#timer {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  z-index: 100;
+}
+
+#result {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px 40px;
+  border-radius: 12px;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}

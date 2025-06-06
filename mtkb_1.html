@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MTKB作品 - 寝取らせピンクカビ</title>
+  <link rel="stylesheet" href="css/mtkb_1.css">
+  <style>
+    #fake-cursor {
+      position: fixed;
+      width: 32px;
+      height: 32px;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <!-- カーソル -->
+  <img id="fake-cursor" src="images/cursor.gif" alt="カーソル">
+
+  <!-- パーティクル背景 -->
+  <div id="particles-js"></div>
+
+  <!-- 横スクロール海背景 -->
+  <div class="bg-scroll"></div>
+
+  <!-- 吹き出し会話 -->
+  <section class="dialogue">
+    <div class="bubble left">「ちょっと奥手な彼に、求めてもらうには」</div>
+    <div class="bubble right">「さて、この動画がどういうことか説明してもらおうか」</div>
+    <div class="bubble left">「いっしょに食べる朝ごはん、おいしいね！」</div>
+  </section>
+
+  <!-- scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/mtkb_1.js"></script>
+  <script>
+    const cursor = document.getElementById('fake-cursor');
+    document.body.style.cursor = "none"; // デフォルトカーソル非表示
+
+    document.addEventListener('mousemove', function (e) {
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+    });
+  </script>
+</body>
+
+</html>
